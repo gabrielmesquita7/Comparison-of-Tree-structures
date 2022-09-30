@@ -1,51 +1,27 @@
-#include "tree.hpp"
+#include "avl.hpp"
 
 int main()
 {
-	int reg[] = {5, 3, 7, 2, 4, 6, 1};
+	int reg[] = {10, 2, 7, 5, 3, 9, 16, 4, 11, 1, 6, 23, 14};
 	Tree *raiz = CreateTree();
 	Tree *aux = CreateTree();
 	Record r;
 
-	cout << "Árvore vazia: " << TVazia(&raiz) << endl;
+	AvlTree *Avlraiz = Avl_CreateTree();
 
-	cout << "ELEMENTOS DA ARVORE: {";
-
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < 13; i++)
 	{
 		r.key = reg[i];
 		r.value = 1;
 		insertTree(&raiz, r);
-		cout << " " << reg[i];
+		Avl_insertTree(&Avlraiz, r);
 	}
 
-	cout << "}" << endl;
-
-	cout << "Árvore vazia: " << TVazia(&raiz) << "\n\n";
-
-	cout << "METODO PREORDEM: { ";
+	cout << "Arvore Binaria: { ";
 	preordem(raiz);
 	cout << "}\n\n";
 
-	cout << "METODO CENTRAL: { ";
-	central(raiz);
-	cout << "}\n\n";
-
-	cout << "METODO POSORDEM: { ";
-	posordem(raiz);
-	cout << "}\n\n";
-
-	r.key = 3;
-	pesquisa(&raiz, &aux, r);
-
-	cout << "PESQUISA 2 E IMPRIME A SUBARVORE { ";
-	preordem(aux);
-	cout << "}\n\n";
-
-	r.key = 3;
-	removeTree(&raiz, r);
-
-	cout << "REMOVE 3 E IMPRIME A ARVORE { ";
-	central(raiz);
+	cout << "Arvore Avl: { ";
+	Avl_preordem(Avlraiz);
 	cout << "}\n\n";
 }
