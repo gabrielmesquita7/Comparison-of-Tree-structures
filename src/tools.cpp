@@ -103,6 +103,89 @@ RBTree InsertDataRbT(string filename, int qtd)
     return Rb;
 }
 
+void searchDataBinaryT(string filename, Tree *raiz)
+{
+    Tree *aux;
+    Record r;
+    string word;
+    ifstream file;
+    file.open(filename);
+    if (file.is_open() == false)
+    {
+        cout << "Arquivo nao encontrado!" << endl;
+        abort();
+    }
+    while (file.good())
+    {
+        string buffer;
+        while (getline(file, buffer))
+        {
+            stringstream ss(buffer);
+            ss.imbue(locale(locale(), new word_reader(" ")));
+            while (ss >> word)
+            {
+                r.key = StringToNumber<float>(word);
+                pesquisa(&raiz, &aux, r);
+            }
+        }
+    }
+}
+
+void searchDataAvlT(string filename, AvlTree *Avlraiz)
+{
+    AvlTree *aux;
+    Record r;
+    string word;
+    ifstream file;
+    file.open(filename);
+    if (file.is_open() == false)
+    {
+        cout << "Arquivo nao encontrado!" << endl;
+        abort();
+    }
+    while (file.good())
+    {
+        string buffer;
+        while (getline(file, buffer))
+        {
+            stringstream ss(buffer);
+            ss.imbue(locale(locale(), new word_reader(" ")));
+            while (ss >> word)
+            {
+                r.key = StringToNumber<float>(word);
+                Avl_pesquisa(&Avlraiz, &aux, r);
+            }
+        }
+    }
+}
+
+void searchDataRB(string filename, RBTree rb)
+{
+    Record r;
+    string word;
+    ifstream file;
+    file.open(filename);
+    if (file.is_open() == false)
+    {
+        cout << "Arquivo nao encontrado!" << endl;
+        abort();
+    }
+    while (file.good())
+    {
+        string buffer;
+        while (getline(file, buffer))
+        {
+            stringstream ss(buffer);
+            ss.imbue(locale(locale(), new word_reader(" ")));
+            while (ss >> word)
+            {
+                r.key = StringToNumber<float>(word);
+                rb.searchTree(r.key);
+            }
+        }
+    }
+}
+
 void RemoveDataBinaryT(string filename, Tree *raiz)
 {
     Record r;

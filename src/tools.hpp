@@ -17,7 +17,7 @@ struct word_reader : ctype<char> // tokenizer
     }
 };
 
-template <typename T>
+template <typename T> // transform a string to int/float...
 T StringToNumber(const std::string &numberAsString)
 {
     T valor;
@@ -35,6 +35,10 @@ T StringToNumber(const std::string &numberAsString)
 Tree *InsertDataBinaryT(string filename, int qtd);
 AvlTree *InsertDataAvlT(string filename, int qtd);
 RBTree InsertDataRbT(string filename, int qtd);
+
+void searchDataBinaryT(string filename, Tree *raiz);
+void searchDataAvlT(string filename, AvlTree *Avlraiz);
+void searchDataRB(string filename, RBTree rb);
 
 void RemoveDataBinaryT(string filename, Tree *raiz);
 void RemoveDataAvlT(string filename, AvlTree *Avlraiz);

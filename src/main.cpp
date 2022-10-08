@@ -1,58 +1,65 @@
-#include "tools.hpp"
+#include "time.hpp"
 
 int main()
 {
-	Record r;
-	Tree *raiz = CreateTree();
-	Tree *aux = CreateTree();
-	AvlTree *Avlraiz = Avl_CreateTree();
-	RBTree Rb;
+	measure_timeInsert(500);
+	cout << "-----------------------------------------------------------" << endl;
+	cout << "500 ENTRADAS:" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << "-----------------------------------------------------------" << endl;
+	resetTimes();
 
-	// raiz = InsertDataBinaryT("data.txt", 500000);
-	// Avlraiz = InsertDataAvlT("data.txt", 500000);
-	Rb = InsertDataRbT("data.txt", 10);
+	measure_timeInsert(5000);
+	cout << "-----------------------------------------------------------" << endl;
+	cout << "5.000 ENTRADAS:" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << "-----------------------------------------------------------" << endl;
+	resetTimes();
 
-	Rb.prettyPrint();
-	string word;
-	ifstream file;
-	file.open("search.txt");
-	if (file.is_open() == false)
-	{
-		cout << "Arquivo nao encontrado!" << endl;
-		abort();
-	}
-	while (file.good())
-	{
-		string buffer;
-		while (getline(file, buffer))
-		{
-			stringstream ss(buffer);
-			ss.imbue(locale(locale(), new word_reader(" ")));
-			while (ss >> word)
-			{
-				r.key = StringToNumber<float>(word);
-				Rb.deleteNode(StringToNumber<float>(word));
-			}
-		}
-	}
-	// RemoveDataRbT("search.txt", Rb);
-	// RemoveDataAvlT("search.txt", Avlraiz);
-	// RemoveDataBinaryT("search.txt", raiz);
+	measure_timeInsert(50000);
+	cout << "-----------------------------------------------------------" << endl;
+	cout << "50.000 ENTRADAS:" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << "-----------------------------------------------------------" << endl;
+	resetTimes();
 
-	Rb.prettyPrint();
-	// cout << "Arvore Binaria: { ";
-	// preordem(raiz);
-	// cout << "}\n\n";
+	measure_timeInsert(500000);
+	cout << "-----------------------------------------------------------" << endl;
+	cout << "500.000 ENTRADAS:" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << "-----------------------------------------------------------" << endl;
+	resetTimes();
 
-	// cout
-	// 	<< "Arvore Avl: { ";
-	// Avl_preordem(Avlraiz);
-	// cout << "}\n\n";
+	measure_timeSearch();
+	cout << "-----------------------------------------------------------" << endl;
+	cout << "500.000 ENTRADAS : PESQUISA" << endl;
+	cout << setprecision(9) << fixed << "Tempo de pesquisa Arvore Binaria: " << binaryTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de pesquisa Arvore Avl: " << AvlTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de pesquisa Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << "-----------------------------------------------------------" << endl;
+	resetTimes();
 
-	for (auto i : deleted_elements)
-	{
-		cout << setprecision(6) << fixed << i << " ";
-	}
-	cout << "\n";
+	measure_timeRemove();
+	cout << "-----------------------------------------------------------" << endl;
+	cout << "500.000 ENTRADAS : REMOCAO" << endl;
+	cout << setprecision(9) << fixed << "Tempo de remocao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de remocao Arvore Avl: " << AvlTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de remocao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << "-----------------------------------------------------------" << endl;
+	resetTimes();
+
+	// for (auto i : deleted_elements)
+	// {
+	// 	cout << setprecision(6) << fixed << i << " ";
+	// }
+	// cout << "\n";
 	return 0;
 }

@@ -4,9 +4,11 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <vector>
 #include <fstream>
 #include <sstream>
+#include <vector>
+#include <map>
+#include <unordered_map>
 
 using namespace std;
 
@@ -29,7 +31,7 @@ struct Tree
 Tree *CreateTree();
 bool TVazia(Tree **t);
 void insertTree(Tree **t, Record r);
-Tree *pesquisa(Tree *t, Record r);
+void pesquisa(Tree **t, Tree **aux, Record r);
 int isInTree(Tree *t, Record r);
 
 void removeTree(Tree **t, Record r);

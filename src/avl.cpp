@@ -52,7 +52,6 @@ void Avl_pesquisa(AvlTree **t, AvlTree **aux, Record r)
 
 	if (*t == NULL)
 	{
-		cout << "[ERROR]: Node not found!";
 		return;
 	}
 

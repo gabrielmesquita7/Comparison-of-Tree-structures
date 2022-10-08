@@ -341,8 +341,6 @@ void RBTree::postorder()
     postOrderHelper(this->root);
 }
 
-// pesquisa o nó pela key k
-// e retorna o nó correspondente
 NodePtr RBTree::searchTree(float k)
 {
     return searchTreeHelper(this->root, k);

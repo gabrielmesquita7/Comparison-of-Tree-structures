@@ -37,18 +37,26 @@ void insertTree(Tree **t, Record r)
   }
 }
 
-Tree *pesquisa(Tree *t, Record r)
+void pesquisa(Tree **t, Tree **aux, Record r)
 {
-  if (r.key == t->reg.key || t == NULL)
+
+  if (*t == NULL)
   {
-    return t;
+    return;
   }
 
-  if (t->reg.key > r.key)
+  if ((*t)->reg.key > r.key)
   {
-    return pesquisa(t->esq, r);
+    pesquisa(&(*t)->esq, aux, r);
+    return;
   }
-  return pesquisa(t->dir, r);
+  if ((*t)->reg.key < r.key)
+  {
+    pesquisa(&(*t)->dir, aux, r);
+    return;
+  }
+
+  *aux = *t;
 }
 
 int isInTree(Tree *t, Record r)
