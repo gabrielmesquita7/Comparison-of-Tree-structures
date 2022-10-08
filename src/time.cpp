@@ -3,6 +3,9 @@
 double binaryTime;
 double AvlTime;
 double RBTime;
+double VectorTime;
+double MapTime;
+double UnorderedMapTime;
 
 void resetTimes()
 {
@@ -31,18 +34,30 @@ void measure_timeInsert(int qtd)
     auto end3 = chrono::high_resolution_clock::now();
     RBTime = chrono::duration_cast<chrono::nanoseconds>(end3 - start3).count();
 
+    auto start4 = chrono::high_resolution_clock::now();
+    vector<float> vetor;
+    vetor = InsertDataVector("data.txt", qtd);
+    sort(vetor.begin(), vetor.end());
+    auto end4 = chrono::high_resolution_clock::now();
+    VectorTime = chrono::duration_cast<chrono::nanoseconds>(end4 - start4).count();
+
     // convert to seconds
     binaryTime *= 1e-9;
     AvlTime *= 1e-9;
     RBTime *= 1e-9;
+    VectorTime *= 1e-9;
 }
 
 void measure_timeSearch()
 {
+    map<float, int> datamap;
+    unordered_map<float, int> unordmap;
     Tree *raiz = CreateTree();
     AvlTree *Avlraiz = Avl_CreateTree();
     RBTree Rb;
 
+    datamap = InsertDataMap("data.txt");
+    unordmap = InsertDataUnordMap("data.txt");
     raiz = InsertDataBinaryT("data.txt", 500000);
     Avlraiz = InsertDataAvlT("data.txt", 500000);
     Rb = InsertDataRbT("data.txt", 500000);
@@ -61,10 +76,22 @@ void measure_timeSearch()
     auto end3 = chrono::high_resolution_clock::now();
     RBTime = chrono::duration_cast<chrono::nanoseconds>(end3 - start3).count();
 
+    auto start4 = chrono::high_resolution_clock::now();
+    searchDataUnordMap("search.txt", unordmap);
+    auto end4 = chrono::high_resolution_clock::now();
+    MapTime = chrono::duration_cast<chrono::nanoseconds>(end4 - start4).count();
+
+    auto start5 = chrono::high_resolution_clock::now();
+    searchDataMap("search.txt", datamap);
+    auto end5 = chrono::high_resolution_clock::now();
+    UnorderedMapTime = chrono::duration_cast<chrono::nanoseconds>(end5 - start5).count();
+
     // convert to seconds
     binaryTime *= 1e-9;
     AvlTime *= 1e-9;
     RBTime *= 1e-9;
+    MapTime *= 1e-9;
+    UnorderedMapTime *= 1e-9;
 }
 
 void measure_timeRemove()

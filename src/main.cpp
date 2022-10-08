@@ -8,6 +8,7 @@ int main()
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de ordenação do vetor: " << VectorTime << "(segundos)" << endl;
 	cout << "-----------------------------------------------------------" << endl;
 	resetTimes();
 
@@ -17,6 +18,7 @@ int main()
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de ordenação do vetor: " << VectorTime << "(segundos)" << endl;
 	cout << "-----------------------------------------------------------" << endl;
 	resetTimes();
 
@@ -26,6 +28,7 @@ int main()
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de ordenação do vetor: " << VectorTime << "(segundos)" << endl;
 	cout << "-----------------------------------------------------------" << endl;
 	resetTimes();
 
@@ -35,6 +38,7 @@ int main()
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Binaria: " << binaryTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore Avl: " << AvlTime << "(segundos)" << endl;
 	cout << setprecision(9) << fixed << "Tempo de insercao Arvore RedBlack: " << RBTime << "(segundos)" << endl;
+	cout << setprecision(9) << fixed << "Tempo de ordenação do vetor: " << VectorTime << "(segundos)" << endl;
 	cout << "-----------------------------------------------------------" << endl;
 	resetTimes();
 

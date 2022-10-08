@@ -35,10 +35,15 @@ T StringToNumber(const std::string &numberAsString)
 Tree *InsertDataBinaryT(string filename, int qtd);
 AvlTree *InsertDataAvlT(string filename, int qtd);
 RBTree InsertDataRbT(string filename, int qtd);
+vector<float> InsertDataVector(string filename, int qtd);
+map<float, int> InsertDataMap(string filename);
+unordered_map<float, int> InsertDataUnordMap(string filename);
 
 void searchDataBinaryT(string filename, Tree *raiz);
 void searchDataAvlT(string filename, AvlTree *Avlraiz);
 void searchDataRB(string filename, RBTree rb);
+void searchDataMap(string filename, map<float, int> datamap);
+void searchDataUnordMap(string filename, unordered_map<float, int> unordmap);
 
 void RemoveDataBinaryT(string filename, Tree *raiz);
 void RemoveDataAvlT(string filename, AvlTree *Avlraiz);

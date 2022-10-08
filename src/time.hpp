@@ -7,6 +7,9 @@
 extern double binaryTime;
 extern double AvlTime;
 extern double RBTime;
+extern double VectorTime;
+extern double MapTime;
+extern double UnorderedMapTime;
 
 void resetTimes();
 void measure_timeInsert(int qtd);
