@@ -15,5 +15,6 @@ void resetTimes();
 void measure_timeInsert(int qtd);
 void measure_timeSearch();
 void measure_timeRemove();
+void measure_time();
 
 #endif

@@ -299,10 +299,6 @@ void searchDataMap(string filename, map<float, int> datamap)
             while (ss >> word)
             {
                 it = datamap.find(StringToNumber<float>(word));
-                if (it != datamap.end())
-                {
-                    // cout << "achou elemento: " << setprecision(6) << fixed << it->first << endl;
-                }
             }
         }
     }
@@ -328,10 +324,6 @@ void searchDataUnordMap(string filename, unordered_map<float, int> unordmap)
             while (ss >> word)
             {
                 it = unordmap.find(StringToNumber<float>(word));
-                if (it != unordmap.end())
-                {
-                    cout << "achou elemento: " << setprecision(6) << fixed << it->first << endl;
-                }
             }
         }
     }
