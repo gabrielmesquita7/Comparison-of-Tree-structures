@@ -1,5 +1,7 @@
 #include "tree.hpp"
 
+vector<float> deleted_elements;
+
 Tree *CreateTree()
 {
   return NULL;
@@ -35,27 +37,18 @@ void insertTree(Tree **t, Record r)
   }
 }
 
-void pesquisa(Tree **t, Tree **aux, Record r)
+Tree *pesquisa(Tree *t, Record r)
 {
-
-  if (*t == NULL)
+  if (r.key == t->reg.key || t == NULL)
   {
-    cout << "[ERROR]: Node not found!";
-    return;
+    return t;
   }
 
-  if ((*t)->reg.key > r.key)
+  if (t->reg.key > r.key)
   {
-    pesquisa(&(*t)->esq, aux, r);
-    return;
+    return pesquisa(t->esq, r);
   }
-  if ((*t)->reg.key < r.key)
-  {
-    pesquisa(&(*t)->dir, aux, r);
-    return;
-  }
-
-  *aux = *t;
+  return pesquisa(t->dir, r);
 }
 
 int isInTree(Tree *t, Record r)
@@ -90,7 +83,6 @@ void removeTree(Tree **t, Record r)
 
   if (*t == NULL)
   {
-    cout << "[ERROR]: Record not found!!!" << endl;
     return;
   }
 
@@ -105,6 +97,8 @@ void removeTree(Tree **t, Record r)
     return;
   }
 
+  deleted_elements.push_back((*t)->reg.key);
+
   if ((*t)->dir == NULL)
   {
     aux = *t;
@@ -118,7 +112,6 @@ void removeTree(Tree **t, Record r)
     antecessor(&(*t)->esq, *t);
     return;
   }
-
   aux = *t;
   *t = (*t)->dir;
   free(aux);
@@ -128,7 +121,7 @@ void preordem(Tree *t)
 {
   if (!(t == NULL))
   {
-    cout << " " << t->reg.key;
+    cout << setprecision(6) << fixed << " " << t->reg.key;
     preordem(t->esq);
     preordem(t->dir);
   }

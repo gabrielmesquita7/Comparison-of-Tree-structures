@@ -2,7 +2,7 @@
 
 void RBTree::initializeNULLNode(NodePtr node, NodePtr pai)
 {
-    node->data = 0;
+    node->data = 0.0;
     node->pai = pai;
     node->left = nullptr;
     node->right = nullptr;
@@ -39,7 +39,7 @@ void RBTree::postOrderHelper(NodePtr node)
     }
 }
 
-NodePtr RBTree::searchTreeHelper(NodePtr node, int key)
+NodePtr RBTree::searchTreeHelper(NodePtr node, float key)
 {
     if (node == TNULL || key == node->data)
     {
@@ -154,9 +154,8 @@ void RBTree::rbTransplant(NodePtr u, NodePtr v)
     v->pai = u->pai;
 }
 
-void RBTree::deleteNodeHelper(NodePtr node, int key)
+void RBTree::deleteNodeHelper(NodePtr node, float key)
 {
-    // find the node containing key
     NodePtr z = TNULL;
     NodePtr x, y;
     while (node != TNULL)
@@ -178,10 +177,10 @@ void RBTree::deleteNodeHelper(NodePtr node, int key)
 
     if (z == TNULL)
     {
-        cout << "Couldn't find key in the tree" << endl;
         return;
     }
 
+    // termina busca
     y = z;
     int y_original_color = y->color;
     if (z->left == TNULL)
@@ -305,7 +304,7 @@ void RBTree::printHelper(NodePtr root, string indent, bool last)
         }
 
         string sColor = root->color ? "RED" : "BLACK";
-        cout << root->data << "(" << sColor << ")" << endl;
+        cout << setprecision(6) << fixed << root->data << "(" << sColor << ")" << endl;
         printHelper(root->left, indent, false);
         printHelper(root->right, indent, true);
     }
@@ -344,7 +343,7 @@ void RBTree::postorder()
 
 // pesquisa o nó pela key k
 // e retorna o nó correspondente
-NodePtr RBTree::searchTree(int k)
+NodePtr RBTree::searchTree(float k)
 {
     return searchTreeHelper(this->root, k);
 }
@@ -453,7 +452,7 @@ void RBTree::rightRotate(NodePtr x)
     x->pai = y;
 }
 
-void RBTree::insert(int key)
+void RBTree::insert(float key)
 {
     NodePtr node = new Node;
     node->pai = nullptr;
@@ -512,7 +511,7 @@ NodePtr RBTree::getRoot()
     return this->root;
 }
 
-void RBTree::deleteNode(int data)
+void RBTree::deleteNode(float data)
 {
     deleteNodeHelper(this->root, data);
 }

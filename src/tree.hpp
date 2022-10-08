@@ -2,17 +2,22 @@
 #define TREE_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <vector>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
+
+extern vector<float> deleted_elements;
 
 typedef struct Record Record;
 typedef struct Tree Tree;
 
 struct Record
 {
-	int key;
-	int value;
+	float key;
 };
 
 struct Tree
@@ -24,7 +29,7 @@ struct Tree
 Tree *CreateTree();
 bool TVazia(Tree **t);
 void insertTree(Tree **t, Record r);
-void pesquisa(Tree **t, Tree **aux, Record r);
+Tree *pesquisa(Tree *t, Record r);
 int isInTree(Tree *t, Record r);
 
 void removeTree(Tree **t, Record r);

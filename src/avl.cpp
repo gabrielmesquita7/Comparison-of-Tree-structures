@@ -125,7 +125,6 @@ void Avl_removeTree(AvlTree **t, AvlTree **f, Record r)
 
 	if (*t == NULL)
 	{
-		cout << "[ERROR]: Record not found!!!\n";
 		return;
 	}
 
@@ -168,7 +167,7 @@ void Avl_preordem(AvlTree *t)
 {
 	if (!(t == NULL))
 	{
-		cout << "" << t->reg.key << ":" << t->weight << "\t";
+		cout << setprecision(6) << fixed << "" << t->reg.key << ":" << t->weight << "\t";
 		Avl_preordem(t->left);
 		Avl_preordem(t->right);
 	}

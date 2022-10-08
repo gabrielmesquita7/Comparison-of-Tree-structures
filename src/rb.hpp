@@ -5,7 +5,7 @@
 
 struct Node
 {
-    int data;
+    float data;
     Node *pai;
     Node *left;
     Node *right;
@@ -24,10 +24,10 @@ private:
     void preOrderHelper(NodePtr node);
     void inOrderHelper(NodePtr node);
     void postOrderHelper(NodePtr node);
-    NodePtr searchTreeHelper(NodePtr node, int key);
+    NodePtr searchTreeHelper(NodePtr node, float key);
     void fixDelete(NodePtr x);
     void rbTransplant(NodePtr u, NodePtr v);
-    void deleteNodeHelper(NodePtr node, int key);
+    void deleteNodeHelper(NodePtr node, float key);
     void fixInsert(NodePtr k);
     void printHelper(NodePtr root, string indent, bool last);
 
@@ -36,16 +36,17 @@ public:
     void preorder();
     void inorder();
     void postorder();
-    NodePtr searchTree(int k);
+    NodePtr searchTree(float k);
     NodePtr minimum(NodePtr node);
     NodePtr maximum(NodePtr node);
     NodePtr successor(NodePtr x);
     NodePtr predecessor(NodePtr x);
     void leftRotate(NodePtr x);
     void rightRotate(NodePtr x);
-    void insert(int key);
+    void insert(float key);
     NodePtr getRoot();
-    void deleteNode(int data);
+    void deleteNode(float data);
     void prettyPrint();
 };
+
 #endif

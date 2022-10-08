@@ -3,4 +3,6 @@ build/objects/src/tree.o
 build/objects/src/main.o
 build/objects/src/avl.o
 build/objects/src/rb.o
+build/objects/src/tools.o
+build/objects/src/time.o
 .vscode/settings.json
