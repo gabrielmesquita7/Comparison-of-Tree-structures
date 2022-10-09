@@ -4,6 +4,7 @@
     <a href="#problema">Problema</a> -
     <a href="#desenvolvimento">Desenvolvimento</a> -
     <a href="#resultados">Resultados</a> -
+    <a href="#conclusao">Conclusao</a> -
     <a href="#executar">Executar</a> -
     <a href="#contatos">Contatos</a>
 </p>
@@ -120,7 +121,10 @@ void measure_time()
 ```
 # Resultados
 ### A saida esperada para o programa:
-saida.jpg
+
+![img1](https://user-images.githubusercontent.com/55333375/194731924-50d9ce8b-7ad2-4d5a-b061-fe58f3065a3f.jpeg)
+![img2](https://user-images.githubusercontent.com/55333375/194731927-ed130d62-b07a-4348-8e6d-5cb8d6581775.jpeg)
+
 
 ## Tempos de execução:
 ### Foi executado o programa 10 vezes em uma máquina com as seguintes especificações:
@@ -130,10 +134,47 @@ saida.jpg
 - Placa Gráfica: AMD Radeon™ RX Vega 10
 
 ### Foi encontrado os seguintes resultados:
-tabelas e 
-graficos
+
+> Obs: Todos os resultados abaixo são uma média das 10 execuções.
+
+**Tempo de inserção:**
+| Entradas         | Arvore BST | Arvore AVL | Arvore RB | Ordenação do Vetor |
+|------------------|---------------|---------------|--------------|-----------------------|
+| Entrada: 500     |  0.071375895 s  | 0.040012633 s   | 0.038636993 s  | 0.038718883 s           |
+| Entrada: 5.000   | 0.049502368 s  | 0.044344231 s   | 0.040032392 s  | 0.046940223 s           |
+| Entrada: 50.000  | 0.108930201 s   | 0.102077771 s   | 0.092341233 s  | 0.226538291 s           |
+| Entrada: 500.000 | 0.809903102 s   | 0.988999763 s   | 0.760399233 s  | 13.893021357 s          |
+
+> Qual o ganho dessas estruturas ao compará-las a vetores ordenados e aplicados à pesquisa binária. Qual o tempo gasto com a ordenação do vetor? Foi possível produzi-lo em memória? 
+**R** = O ganho das estruturas de árvore só é visível após as 50.000 entradas onde é visto um ganho de 124.03% na velocidade e quando são 500.000 entradas esse ganho aumenta consideravelmente visto que o vetor fica 1528.53% mais devagar.
+
+![image](https://user-images.githubusercontent.com/55333375/194733214-286de63d-08b8-4c85-abbd-0e916e5fbb84.png)
+
+**Tempo de pesquisa:**
+| Pesquisa | Arvore BST   | Arvore AVL  | Arvore RB   | Map         | Unordered_map |
+|----------|--------------|-------------|-------------|-------------|---------------|
+| Tempo(s) |  0.017603213 | 0.017392099 | 0.017762319 | 0.162890991 | 0.130098392   |
+
+>Adotando como estrutura o map e unorder_map do C++, há ganhos maiores nesse processo de pesquisa?
+**R** = Não foi observado nenhum ganho, pelo contrário, foi observado perda no processo de pesquisa adotando essas estruturas, tendo um aumento de 
+mais de 500% no tempo utilizando essas estruturas.
+
+**Tempo de remoção:**
+| Remoção  | Arvore BST   | Arvore AVL  | Arvore RB   |
+|----------|--------------|-------------|-------------|
+| Tempo(s) |  0.017908377 | 0.017600099 | 0.017307893 |
+
+**Comparação entre as Árvores:**
+
+![image](https://user-images.githubusercontent.com/55333375/194734271-cbb9fa97-1e7d-4603-afb9-ba6ffcc16166.png)
+![image](https://user-images.githubusercontent.com/55333375/194734374-f72184b4-c8da-43b3-98a8-743a833beecf.png)
+![image](https://user-images.githubusercontent.com/55333375/194734410-15ca0a57-5399-41ba-abde-777169fc2481.png)
 
 
+# Conclusao
+Foi observado que com menor massa de dados o **vetor ordenado** consegue ser a melhor opção, porém o mesmo fica extremamente custoso em grandes massa de dados. O mesmo ocorre para a **map** e **unordered_map** já que para pequenas amostras de dados a estrutura unordered_map consegue ter um custo *O(1)* na pesquisa.
+
+As estruturas de árvore conseguem manter uma média de tempo bem menor que as outras estruturas no geral, porém com o alto numero de dados é observado que a árvore binária e a AVL tendem a ser mais custosas que a RedBlack. Com isso é constatado que as árvores Redblack são de uso mais geral. Eles se saem relativamente bem em adicionar, remover e pesquisar, mas as árvores AVL têm pesquisas mais rápidas ao custo de adicionar/remover mais lentamente. Já que o unico tempo em que a Redblack foi mais custosa é na **pesquisa**.
 # Executar
 * Como executar:
 
