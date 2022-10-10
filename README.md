@@ -187,19 +187,17 @@ As estruturas de árvore conseguem manter uma média de tempo bem menor que as o
 
 # Contatos
 
-<div style="display: inline-block;">
+<div>
 <a href="https://t.me/mesquita776">
 <img align="center" height="20px" width="90px" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/> 
 </a>
 
+
 <a href="https://www.linkedin.com/in/gabriel-mesquita-pereira-675946229/">
 <img align="center" height="20px" width="90px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
-
 </div>
+<p></p>
 
-<a style="color:black" href="mailto:michel@cefetmg.br?subject=[GitHub]%20Source%20Dynamic%20Lists">
-✉️ <i>mesquitagabriel30@gmail.com</i>
-</a>
 
-<p> </p>
+[![Gmail Badge](https://img.shields.io/badge/-mesquitagabriel30@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mesquitagabriel30@gmail.com)](mailto:mesquitagabriel30@gmail.com)
