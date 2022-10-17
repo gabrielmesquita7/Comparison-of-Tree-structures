@@ -48,11 +48,11 @@ void removeTree(Tree **t, Record r)
 > Para cada vez que é chamado a função de remoção e é verificado que o elemento está dentro da árvore, a key {float} é armazenada dentro do vector para retornar ao usuário ao fim do programa.
 
 Contêineres Associativos:
-- Map
-- Unordered_map
+- Map -> https://cplusplus.com/reference/map/map/
+- Unordered_map -> https://cplusplus.com/reference/unordered_map/unordered_map/
 
 Contêineres de Sequência:
-- Vector
+- Vector -> https://cplusplus.com/reference/vector/vector/
 
 > Todas essas estruturas já estão implementadas como bibliotecas no C++, basta chamá-las.
  ```cpp
@@ -165,13 +165,17 @@ mais de 500% no tempo utilizando essas estruturas.
 | Tempo(s) |  0.017908377 | 0.017600099 | 0.017307893 |
 
 **Comparação entre as Árvores:**
-
+> média entre as inserções (500, 5000, 50000, 500000)
 ![image](https://user-images.githubusercontent.com/55333375/194734271-cbb9fa97-1e7d-4603-afb9-ba6ffcc16166.png)
 ![image](https://user-images.githubusercontent.com/55333375/194734374-f72184b4-c8da-43b3-98a8-743a833beecf.png)
 ![image](https://user-images.githubusercontent.com/55333375/194734410-15ca0a57-5399-41ba-abde-777169fc2481.png)
 
 
 # Conclusao
+A inserção dos dados foi feita de modo aleatória e não repetida, ou seja, espera-se que a complexidade das árvores se mantenham no caso médio O(log n). Com isso foi observado que a RedBlack se manteve com menos tempo durante todos os testes obtendo assim a menor média entre as estruturas, outro ponto observado foi que o tempo da AVL aumentou drasticamentente com o aumento do volume dos dados, como por exemplo o aumento da diferença de tempo para a RedBlack no volume de 500.000 dados oque não era tão grande no volume de 50.000 dados, oque era de se esperar já que a AVL tende a ser bastante custosa em grande volumes de dados.
+
+Os dados de entrada que são realmente pesquisados representa somente **2,18%** da quantidade total, ou seja, o tempo de pesquisa e remoção se diferem muito pouco entre as estruturas porque na maioria das vezes será percorrido a árvore inteira e não haverá a remoção, porém mesmo com essa pouca diferença é observado que a **RedBlack** consegue ter o menor tempo na remoção e o maior na pesquisa.
+
 Foi observado que com menor massa de dados o **vetor ordenado** consegue ser a melhor opção, porém o mesmo fica extremamente custoso em grandes massa de dados. O mesmo ocorre para a **map** e **unordered_map** já que para pequenas amostras de dados a estrutura unordered_map consegue ter um custo *O(1)* na pesquisa.
 
 As estruturas de árvore conseguem manter uma média de tempo bem menor que as outras estruturas no geral, porém com o alto numero de dados é observado que a árvore binária e a AVL tendem a ser mais custosas que a RedBlack. Com isso é constatado que as árvores Redblack são de uso mais geral. Eles se saem relativamente bem em adicionar, remover e pesquisar, mas as árvores AVL têm pesquisas mais rápidas ao custo de adicionar/remover mais lentamente. Já que o unico tempo em que a Redblack foi mais custosa é na **pesquisa**.
