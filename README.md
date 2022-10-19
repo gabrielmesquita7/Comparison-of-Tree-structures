@@ -164,10 +164,12 @@ mais de 500% no tempo utilizando essas estruturas.
 |----------|--------------|-------------|-------------|
 | Tempo(s) |  0.017908377 | 0.017600099 | 0.017307893 |
 
-**Comparação entre as Árvores:**
+**Comparação entre as Estruturas:**
 > média entre as inserções (500, 5000, 50000, 500000)
-![image](https://user-images.githubusercontent.com/55333375/194734271-cbb9fa97-1e7d-4603-afb9-ba6ffcc16166.png)
-![image](https://user-images.githubusercontent.com/55333375/194734374-f72184b4-c8da-43b3-98a8-743a833beecf.png)
+![Captura de tela de 2022-10-19 11-40-23](https://user-images.githubusercontent.com/55333375/196723099-cc19a663-ac47-4ea9-89c3-3867dc03f4f5.png)
+
+![Captura de tela de 2022-10-19 11-45-56](https://user-images.githubusercontent.com/55333375/196724444-7828bdd8-859b-4590-b6d8-ec71d43ee9be.png)
+
 ![image](https://user-images.githubusercontent.com/55333375/194734410-15ca0a57-5399-41ba-abde-777169fc2481.png)
 
 
